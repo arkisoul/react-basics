@@ -1,39 +1,4 @@
-.container {
-    background-color: oldlace;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.sidebar {
-    background-color: tomato;
-    width: 20%;
-    height: 100vh;
-    padding: 20px;
-}
-
-.input {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1em;
-}
-
-.form {
-    width: 400px;
-    padding: 1em 1.5em;
-    background-color: #1a1a1a;
-    color: white;
-    border-radius: 1em;
-    border: 1px solid currentColor;
-}
-
-input {
-    padding: 1em;
-    line-height: 1;
-    color: black;
-    border-radius: 0.5em;
-    border: 1px solid currentColor;
+.main-content {
+    background-color: lavenderblush;
+    min-height: 100vh;
 }
