@@ -1,0 +1,11 @@
+.content {
+    margin-top: 82px;
+    padding: 1em;
+    display: flex;
+}
+.sidebar {
+    flex: 0 0 20%;
+}
+.main-content {
+    flex: 1 1 80%;
+}

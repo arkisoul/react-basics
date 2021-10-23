@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import MainLayout from "../../layout/main/Main";
 import { Card } from "../../components/card/Card";
-import { Product } from "../../components/Product/Product";
+import { Product } from "../../components/product/Product";
 import "./Products.css";
 
 export const Products = (props) => {
@@ -50,16 +51,23 @@ export const Products = (props) => {
     );
   } else {
     return (
-      <div className="products">
-        <h1>Products List</h1>
-        <div className="products-list">
-          {products.map((product) => (
-            <Card key={product.id}>
-              <Product product={product} />
-            </Card>
-          ))}
-        </div>
-      </div>
+      <MainLayout
+        main={
+          <div className="products">
+            <h1>Products List</h1>
+            <div className="products-list">
+              {products.map((product) => (
+                <Card
+                  key={product.id}
+                  children={<Product product={product} />}
+                />
+              ))}
+            </div>
+          </div>
+        }
+        footer={<footer>This is a footer</footer>}
+        sidebar={<aside>This is a sidebar</aside>}
+      ></MainLayout>
     );
   }
 };
