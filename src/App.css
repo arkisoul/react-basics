@@ -36,4 +36,11 @@ input {
     color: black;
     border-radius: 0.5em;
     border: 1px solid currentColor;
+    margin: 0 0 2%;
+    width: 92%;
+}
+
+.No-Page{
+    text-align: center;
+    margin: 5em;
 }

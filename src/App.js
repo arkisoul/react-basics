@@ -1,7 +1,10 @@
 import React from 'react';
+import reactDom from 'react-dom';
 import './App.css';
-import Container from './components/container/Container'
-import Person from './components/person/Person'
+// import Container from './components/container/Container'
+// import Person from './components/person/Person'
+import Register from './Registration/register';
+import {BrowserRouter, Route, Switch} from "react-router-dom"
 // import Button from './components/button/Button'
 
 class App extends React.Component {
@@ -105,10 +108,10 @@ class App extends React.Component {
   render() {
     // console.log('In render')
     return (
-      <div className="container">
-        {/* <Container ref={this.nameInputRef} /> */}
-        <Person ref={this.personRef} />
-        {/* <form action="" className="form" onSubmit={this.handleSubmit}>
+      // <div className="container">
+        // {/* <Container ref={this.nameInputRef} /> */}
+        // <Person ref={this.personRef} />
+        /*{ <form action="" className="form" onSubmit={this.handleSubmit}>
           <div className="input" ref={this.nameInputRef}>
             <label htmlFor="name">Name</label>
             <input type="text" name="name" id="name" value={this.state.name} onChange={this.handleChange} />
@@ -122,8 +125,20 @@ class App extends React.Component {
             <input type="password" name="password" id="password" value={this.state.password} onChange={this.handleChange} />
           </div>
           <div><button type="submit">Submit</button></div>
-        </form> */}
-      </div>
+      //   </form> }*/
+      // </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/register">
+            <Register/>
+          </Route>
+          <Route path="*">
+            <h1 className="No-Page">
+              Sorry! The page you are looking is not available...
+            </h1>
+          </Route>
+        </Switch>
+      </BrowserRouter>
     )
   }
 }
