@@ -6,8 +6,8 @@ function MainLayout(props) {
       <div className="main">
         <TopNavbar />
         <div className="content">
-          {props.sidebar && <div className="sidebar">{props.sidebar}</div>}
           <div className="main-content">{props.main}</div>
+          {props.sidebar && <div className="sidebar">{props.sidebar}</div>}
         </div>
         {props.footer && <div className="footer">{props.footer}</div>}
       </div>

@@ -3,8 +3,11 @@
     display: grid;
     place-content: center;
 }
-.products {
-    padding: 2em;
+.products-title {
+    font-weight: 900;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ddd;
 }
 .products-list {
     display: grid;
@@ -16,12 +19,12 @@
         grid-template-columns: repeat(2, minmax(120px, 1fr));
     }
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 1024px) {
     .products-list {
         grid-template-columns: repeat(3, minmax(120px, 1fr));
     }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
     .products-list {
         grid-template-columns: repeat(4, minmax(120px, 1fr));
     }

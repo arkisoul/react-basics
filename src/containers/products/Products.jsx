@@ -54,7 +54,7 @@ export const Products = (props) => {
       <MainLayout
         main={
           <div className="products">
-            <h1>Products List</h1>
+            <h3 className="products-title">Products List</h3>
             <div className="products-list">
               {products.map((product) => (
                 <Card
