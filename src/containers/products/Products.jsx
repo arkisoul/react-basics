@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import axios from "axios";
+import {useSelector, useDispatch} from 'react-redux';
 
 import MainLayout from "../../layout/main/Main";
 import { Card } from "../../components/card/Card";
 import { Product } from "../../components/product/Product";
 import ProductDetailComponent from "./detail/ProductDetail";
+import {addProduct} from '../../store/actions/productActions';
 import "./Products.css";
 
 export default function Products(props) {
-  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { path, url } = useRouteMatch();
+  const dispatch = useDispatch();
+  const productState = useSelector(state => state.product)
 
   /* const getProductsList = () => {
     const productsList = products.map((product) => (
@@ -31,7 +34,10 @@ export default function Products(props) {
         // const products = await res.json()
         // console.log(products)
         const response = await axios.get("https://fakestoreapi.com/products");
-        setProducts(response.data);
+        response.data.forEach(product => {
+          dispatch(addProduct(product))
+        });
+        // setProducts(response.data);
       } catch (error) {
         console.error(
           `Error! in fetching products from fakestoreapi ${error.message}`
@@ -61,10 +67,11 @@ export default function Products(props) {
               <div className="products">
                 <h3 className="products-title">Products List</h3>
                 <div className="products-list">
-                  {products.map((product) => (
-                    <Link key={product.id} to={`${url}/${product.id}/${product.title}?queryParam=value`}>
-                      <Card children={<Product product={product} />} />
-                    </Link>
+                  {productState.products.map((product) => (
+                    <Card
+                      key={product.id}
+                      children={<Product product={product} />}
+                    />
                   ))}
                 </div>
               </div>
@@ -80,3 +87,9 @@ export default function Products(props) {
     </Switch>
   );
 }
+
+  /* <Link
+                      to={`${url}/${product.id}/${product.title}?queryParam=value`}
+                      style={{ textDecoration: "none", color: "initial" }}
+                    >
+                    </Link> */

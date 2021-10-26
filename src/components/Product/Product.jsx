@@ -1,12 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faCartPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch} from 'react-redux'
 
+import {removeProduct} from '../../store/actions/productActions'
 import "./Product.css";
 
 export const Product = (props) => {
+  const dispatch = useDispatch();
   const { product } = props;
+  const removeAProduct = () => {
+    dispatch(removeProduct(product.id))
+  }
   return (
     <div className="product">
+      <button className="btn-remove" onClick={removeAProduct}>
+        <FontAwesomeIcon icon={faTrash} color="red" />
+      </button>
       <div className="product-head">
         <img
           src={product.image}

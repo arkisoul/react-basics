@@ -2,3 +2,26 @@
     background-color: lavenderblush;
     min-height: 100vh;
 }
+.btn {
+  all: unset;
+  padding: 0.75em 1em;
+  border-radius: 0.5em 0 0.5em 0;
+  font-size: 0.9rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  transition: all 300ms ease-in;
+}
+.btn-primary {
+  background-color: navajowhite;
+}
+.btn-accent {
+  background-color: royalblue;
+  color: white;
+}
+.btn-block {
+  flex: 1 1 100%;
+}
+.btn:hover {
+  transform: scale(1.1);
+}

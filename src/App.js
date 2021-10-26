@@ -11,10 +11,11 @@ const ProductsComponent = React.lazy(() =>
   import("./containers/products/Products")
 );
 const UserComponent = React.lazy(() => import("./containers/user/User"));
+const CounterComponent = React.lazy(() => import("./containers/counter/Counter"));
 
 function App() {
   return (
-    <BrowserRouter forceRefresh>
+    <BrowserRouter>
       <main className="main-content">
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
@@ -30,6 +31,9 @@ function App() {
             <Route exact path="/about-us">
               <Redirect to={"/about"} />
             </Route>
+            <Route exact path="/counter">
+              <CounterComponent />
+            </Route>
             <Route exact path="/user">
               <UserComponent />
             </Route>
@@ -37,7 +41,7 @@ function App() {
               <h1>Login component</h1>
             </Route>
             <Route exact path="/">
-              <HomeComponent />
+              <HomeComponent title={'eMart - Home'} />
             </Route>
             <Route path="*">
               <div className="NotFoundPage">
