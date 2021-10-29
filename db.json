@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "name": "Ramesh",
+      "email": "sunil@mailinator.com",
+      "password": "$2a$10$AZnys1pp1nuVw2APryeqVudIcFegXIl/pzitFbEI1Z4Pnwy2THobK",
+      "id": 1
+    }
+  ]
+}

@@ -9,7 +9,7 @@ const initialState = {
 export const productReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ADDPRODUCT:
-      return { ...state, products: [...state.products, payload.product] };
+      return { ...state, products: [...payload.product] };
 
     case REMOVEPRODUCT:
       const filteredProducts = [...state.products].filter(

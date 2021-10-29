@@ -1,12 +1,39 @@
+import React, { useRef } from 'react';
 import MainLayout from "../../layout/main/Main";
-import {withSubscription} from "../../hoc/hocIllustration";
 
-function About(props) {
-  console.log(props)
-  return <MainLayout main={<h1>About Component {props.propFromHoc}</h1>}></MainLayout>;
+class About extends React.Component {
+  constructor(props) {
+    super(props)
+    this.ref = React.createRef()
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit() {
+    console.log('Handled submit action', this.ref.current)
+  }
+
+  render() {
+    return <MainLayout main={
+      <>
+        <h1>About Component</h1>
+        <Login onSubmit={this.handleSubmit} ref={this.ref} />
+      </>
+    }></MainLayout>;
+  }
 }
 
-export default withSubscription(
-  About,
-  "https://jsonplaceholder.typicode.com/posts?userId=1"
-);
+export default About;
+
+const Login = React.forwardRef((props, ref) => {
+  const usernameRef = useRef()
+  
+  return (
+    <form action="" ref={ref}>
+      <input type="text" name="username" id="" ref={usernameRef} />
+      <input type="text" name="password" id="" />
+      <button type="submit" onClick={props.onSubmit}>
+        Login
+      </button>
+    </form>
+  );
+})

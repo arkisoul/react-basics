@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faCartPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch} from 'react-redux'
@@ -6,6 +7,8 @@ import {removeProduct} from '../../store/actions/productActions'
 import "./Product.css";
 
 export const Product = (props) => {
+  const params = useParams();
+  console.log(params)
   const dispatch = useDispatch();
   const { product } = props;
   const removeAProduct = () => {

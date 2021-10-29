@@ -34,9 +34,7 @@ export default function Products(props) {
         // const products = await res.json()
         // console.log(products)
         const response = await axios.get("https://fakestoreapi.com/products");
-        response.data.forEach(product => {
-          dispatch(addProduct(product))
-        });
+        dispatch(addProduct(response.data));
         // setProducts(response.data);
       } catch (error) {
         console.error(
@@ -68,10 +66,9 @@ export default function Products(props) {
                 <h3 className="products-title">Products List</h3>
                 <div className="products-list">
                   {productState.products.map((product) => (
-                    <Card
-                      key={product.id}
-                      children={<Product product={product} />}
-                    />
+                    <Link key={product.id} to={`/products/${product.id}/${product.title}`}>
+                      <Card children={<Product product={product} />} />
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -81,7 +78,7 @@ export default function Products(props) {
           sidebar={<aside>This is a sidebar</aside>}
         ></MainLayout>
       </Route>
-      <Route path={`${path}/:productId/:productTitle`}>
+      <Route path={`${path}/:id/:title`}>
         <ProductDetailComponent />
       </Route>
     </Switch>
