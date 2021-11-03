@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import HomeComponent from "./containers/home/Home";
 import "./App.css";
+import About from './containers/about/About';
 const AboutComponent = React.lazy(() => import("./containers/about/About"));
 const ContactComponent = React.lazy(() =>
   import("./containers/contact/Contact")

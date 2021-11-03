@@ -1,9 +1,62 @@
 {
   "users": [
     {
-      "name": "Ramesh",
-      "email": "sunil@mailinator.com",
-      "password": "$2a$10$AZnys1pp1nuVw2APryeqVudIcFegXIl/pzitFbEI1Z4Pnwy2THobK",
+      "email": "akash@mailinator.com",
+      "password": "$2a$10$rsegyyYVchpgXwXO1HiwYuH0QClEDFhAk9kvf85PBrZA6MLWCe/au",
+      "id": 1
+    },
+    {
+      "email": "nilesh@mailinator.com",
+      "password": "$2a$10$IB7wE9CG/lyKOyVOaEDMquqFn4d2NSXTloQvrnyyO1TFmC.oE3biC",
+      "id": 2
+    },
+    {
+      "email": "suresh@mailinator.com",
+      "password": "$2a$10$rlhVb8ANeWmE4ZGFX7bSV.DY2epd5d2bCxdgayOTNxnhKzpoLdvkC",
+      "role": "patient",
+      "verified": 0,
+      "verifiedAt": null,
+      "firstName": "Suresh",
+      "lastName": "Sharma",
+      "phone": "9876543210",
+      "id": 3
+    }
+  ],
+  "events": [],
+  "roles": [],
+  "patients": [
+    {
+      "userId": 1,
+      "medications": [
+        "calpol",
+        "tusq"
+      ],
+      "allergies": "None",
+      "history": [
+        {
+          "appointment": "2021-11-12 13:15:00Z",
+          "confirmed": true
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "physicians": [
+    {
+      "firstName": "Ramesh",
+      "lastName": "Ramesh",
+      "id": 1
+    },
+    {
+      "firstName": "Ramesh",
+      "lastName": "Ramesh",
+      "id": 2
+    }
+  ],
+  "notifications": [
+    {
+      "title": "sample notification",
+      "userId": 1,
       "id": 1
     }
   ]
