@@ -20,6 +20,24 @@
       "lastName": "Sharma",
       "phone": "9876543210",
       "id": 3
+    },
+    {
+      "name": "Suresh",
+      "email": "suresh@mailinator.com",
+      "password": "12345678",
+      "roleId": 3,
+      "active": 0,
+      "activationDate": null,
+      "id": 4
+    },
+    {
+      "name": "Suresh",
+      "email": "suresh@mailinator.com",
+      "password": "12345678",
+      "roleId": 3,
+      "active": 0,
+      "activationDate": null,
+      "id": 5
     }
   ],
   "events": [],
