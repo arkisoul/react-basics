@@ -4,6 +4,7 @@ import LayoutComponent from "../layout/Layout";
 import AdminHomeComponent from './admin/home/Home';
 import PhysicianHomeComponent from './physician/home/Home';
 import PatientHomeComponent from './patient/home/Home';
+import ProductsComponent from './patient/products/Products'
 
 const Dashboard = (props) => {
   const { path } = useRouteMatch();
@@ -13,6 +14,7 @@ const Dashboard = (props) => {
       { menu: "Demography", link: `${path}/demography` },
       { menu: "Medications", link: `${path}/medications` },
       { menu: "Appointments", link: `${path}/appointments` },
+      { menu: "Products", link: `${path}/products` },
     ],
     physician: [
       { menu: "Dashboard", link: path },
@@ -39,6 +41,9 @@ const Dashboard = (props) => {
         </Route>
         <Route exact path={`${path}/physician`}>
           <PhysicianHomeComponent />
+        </Route>
+        <Route exact path={`${path}/products`}>
+          <ProductsComponent />
         </Route>
         <Route exact path={`${path}/*`}>
           <Redirect to={path} />
