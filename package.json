@@ -31,7 +31,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:server": "json-server --watch db.json --routes routes.json --port 3001 -m ./node_modules/json-server-auth"
+    "start:server": "json-server --watch db.json --routes routes.json -m ./node_modules/json-server-auth",
+    "serve": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -52,7 +53,11 @@
     ]
   },
   "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
     "json-server": "^0.17.0",
-    "json-server-auth": "^2.1.0"
+    "json-server-auth": "^2.1.0",
+    "nodemon": "^2.0.14"
   }
 }

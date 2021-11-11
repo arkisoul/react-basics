@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter Reducer should return initial state on store creation 1`] = `
+Object {
+  "count": 0,
+}
+`;

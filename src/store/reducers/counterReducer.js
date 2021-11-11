@@ -4,7 +4,7 @@ import {
   DECREMENT,
 } from "../actions/counterActions";
 
-const counterInitialState = {
+export const counterInitialState = {
   count: 0,
 };
 

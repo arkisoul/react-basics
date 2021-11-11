@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`counterActions should return decrement action object 1`] = `
+Object {
+  "type": "DECREMENT",
+}
+`;
+
+exports[`counterActions should return increment action object 1`] = `
+Object {
+  "type": "INCREMENT",
+}
+`;
+
+exports[`counterActions should return increment action object with payload 1`] = `
+Object {
+  "payload": Object {
+    "value": 5,
+  },
+  "type": "INCREMENTBYVALUE",
+}
+`;

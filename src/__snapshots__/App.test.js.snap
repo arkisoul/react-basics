@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component should render the component 1`] = `
+<BrowserRouter>
+  <main
+    className="main-content"
+  >
+    <Suspense
+      fallback={
+        <div>
+          Loading...
+        </div>
+      }
+    >
+      <Switch>
+        <Route
+          exact={true}
+          path="/"
+        >
+          <h1>
+            Login Page
+          </h1>
+        </Route>
+        <Route
+          exact={true}
+          path="/login"
+        >
+          <h1>
+            Login Page
+          </h1>
+        </Route>
+        <Route
+          path="/dashboard"
+        >
+          <Redirect
+            to="/login"
+          />
+        </Route>
+        <Route
+          path="*"
+        >
+          <div
+            className="NotFoundPage"
+          >
+            <h1>
+              We could not find what you are looking for.
+            </h1>
+          </div>
+        </Route>
+      </Switch>
+    </Suspense>
+  </main>
+</BrowserRouter>
+`;

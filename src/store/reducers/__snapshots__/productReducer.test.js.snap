@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`product reducer should return initial state on store creation 1`] = `
+Object {
+  "error": null,
+  "loading": false,
+  "products": Array [],
+}
+`;
+
+exports[`product reducer should return updated state on add product action 1`] = `
+Object {
+  "error": null,
+  "loading": false,
+  "products": Array [
+    Object {
+      "body": "Product description",
+      "id": 1,
+      "price": 12.99,
+      "title": "Product title",
+    },
+  ],
+}
+`;
+
+exports[`product reducer should return updated state on add product action 2`] = `
+Object {
+  "error": null,
+  "loading": false,
+  "products": Array [
+    Object {
+      "body": "another product description",
+      "id": 2,
+      "price": 9.99,
+      "title": "another product",
+    },
+  ],
+}
+`;

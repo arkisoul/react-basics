@@ -1,6 +1,6 @@
 import { ADDPRODUCT, REMOVEPRODUCT } from "../actions/productActions";
 
-const initialState = {
+export const initialState = {
   products: [],
   loading: false,
   error: null,

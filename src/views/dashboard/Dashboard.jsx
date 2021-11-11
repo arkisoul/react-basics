@@ -1,5 +1,9 @@
-import { Switch, Route, useRouteMatch } from "react-router-dom";
+import { Switch, Route, useRouteMatch, Redirect } from "react-router-dom";
 import LayoutComponent from "../layout/Layout";
+
+import AdminHomeComponent from './admin/home/Home';
+import PhysicianHomeComponent from './physician/home/Home';
+import PatientHomeComponent from './patient/home/Home';
 
 const Dashboard = (props) => {
   const { path } = useRouteMatch();
@@ -27,14 +31,17 @@ const Dashboard = (props) => {
         <Route exact path={path}>
           <h1>I am dashboard component</h1>
         </Route>
-        <Route exact path={`${path}/demography`}>
-          <h1>I am demography component</h1>
+        <Route exact path={`${path}/admin`}>
+          <AdminHomeComponent />
         </Route>
-        <Route exact path={`${path}/medications`}>
-          <h1>I am medications component</h1>
+        <Route exact path={`${path}/patient`}>
+          <PatientHomeComponent />
         </Route>
-        <Route exact path={`${path}/appointments`}>
-          <h1>I am appointments component</h1>
+        <Route exact path={`${path}/physician`}>
+          <PhysicianHomeComponent />
+        </Route>
+        <Route exact path={`${path}/*`}>
+          <Redirect to={path} />
         </Route>
       </Switch>
     </LayoutComponent>
